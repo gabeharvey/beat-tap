@@ -1,0 +1,104 @@
+:root {
+    background-color: black;
+    color: white;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    color: yellow;
+    border: 5px solid white;
+    padding: 5px;
+    text-shadow: 0px 5px 5px orange, 0px 10px 10px red;
+    background-image: linear-gradient(to bottom, black, darkgray);
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 5px 5px 5px white;
+}
+
+nav {
+    position: bottom;
+    color: yellow;
+    text-shadow: 0px 0px 0px;
+    font-weight: bolder;
+}
+
+input {
+    border-radius: 5px 5px 5px 5px;
+    border: none;
+    margin-top: 20px;
+    width: 82vw;
+    height: 30px;
+}
+
+button {
+    border-radius: 5px 5px 5px 5px;
+    margin-top: 2px;
+    width: 14vw;
+    height: 32px;
+    border: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+#mainContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#artist {
+    display: flex;
+    justify-content: center;
+    border: 5px solid white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px 10px 10px 10px;
+    width: 27vw;
+    height: 300px;
+    box-shadow: 5px 5px 5px white;
+    background-image: linear-gradient(to bottom, black, darkgray);
+}
+
+#genre {
+    display: flex;
+    justify-content: center;
+    border: 5px solid white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px 10px 10px 10px;
+    width: 27vw;
+    height: 300px;
+    box-shadow: 5px 5px 5px white;
+    background-image: linear-gradient(to bottom, black, darkgray);
+}
+
+#location {
+    display: flex;
+    justify-content: center;
+    border: 5px solid white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px 10px 10px 10px;
+    width: 27vw;
+    height: 300px;
+    box-shadow: 5px 5px 5px white;
+    background-image: linear-gradient(to bottom, black, darkgray);
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    color: yellow;
+    border: 5px solid white;
+    padding: 5px;
+    background-image: linear-gradient(to bottom, black, darkgray);
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 5px 5px 5px white;
+}

@@ -50,6 +50,12 @@ button {
     justify-content: space-between;
 }
 
+h2 {
+    color: yellow;
+    text-shadow: 0px 5px 5px orange, 0px 10px 10px red;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 #artist {
     display: flex;
     justify-content: center;

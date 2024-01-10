@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./assets/css/style.css" rel="stylesheet">
     <title>Beat Tap</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 <body background="./assets/images/metal-display-screen.jpg">
   <header>
     <!-- Title and anchor tags for login and sign up features -->
-    <h1>Beat Tap</h1>
-    <nav>
+    <h1 class="is-size-1 is-uppercase has-text-weight-bold">Beat Tap</h1>
+    <nav class="has-text-right">
 
 
-        <a>Login</a>
-        <a>Sign up</a>
+        <a class="has-text-warning">Login</a>
+        <a class="has-text-warning">Sign up</a>
 
     </nav>
   </header>
@@ -30,20 +31,20 @@
     <!-- creating container element -->
     <div id="mainContainer">
         <div id="artist" class="container" data-click="false">
-            <h2>Artist</h2>
+            <h2 class="is-size-4 is-uppercase is-italic has-text-weight-bold has-text-warning">Artist</h2>
         </div>
 
         <div id="genre" class="container" data-click="false">
-            <h2>Genre</h2>
+            <h2 class="is-size-4 is-uppercase is-italic has-text-weight-bold has-text-warning">Genre</h2>
         </div>
 
         <div id="location" class="container" data-click="false">
-            <h2>Location</h2>
+            <h2 class="is-size-4 is-uppercase is-italic has-text-weight-bold has-text-warning">Location</h2>
         </div>
     </div>
   </main>
   <footer>
-    <h3>Copyright &copy 2024</h3>
+    <h3 class="has-text-centered has-text-weight-bold has-text-warning">Copyright &copy 2024</h3>
   </footer>
   <script src="./assets/js/script.js"></script>
 </body>

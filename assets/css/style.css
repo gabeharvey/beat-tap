@@ -45,7 +45,9 @@ button {
 
 #artist {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     border: 5px solid white;
     border-radius: 10px 10px 10px 10px;
     width: 27vw;
@@ -53,11 +55,21 @@ button {
     box-shadow: 5px 5px 5px white;
     background-image: linear-gradient(to bottom, black, darkgray);
     opacity: .9;
+}
+
+.artistList {
+    color: red;
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    text-shadow: 0px 2px 2px white;
 }
 
 #genre {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     border: 5px solid white;
     border-radius: 10px 10px 10px 10px;
     width: 27vw;
@@ -67,9 +79,19 @@ button {
     opacity: .9;
 }
 
+.genreList {
+    color: red;
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    text-shadow: 0px 2px 2px white;
+}
+
 #country {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     border: 5px solid white;
     border-radius: 10px 10px 10px 10px;
     width: 27vw;
@@ -77,6 +99,14 @@ button {
     box-shadow: 5px 5px 5px white;
     background-image: linear-gradient(to bottom, black, darkgray);
     opacity: .9;
+}
+
+.countryList {
+    color: red;
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    text-shadow: 0px 2px 2px white;
 }
 
 footer {

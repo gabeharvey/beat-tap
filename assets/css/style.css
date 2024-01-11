@@ -67,7 +67,7 @@ button {
     opacity: .9;
 }
 
-#location {
+#country {
     display: flex;
     justify-content: center;
     border: 5px solid white;

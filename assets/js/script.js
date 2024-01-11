@@ -2,6 +2,7 @@
 const artist = document.getElementById('artist');
 const genre = document.getElementById('genre');
 const locationEl = document.getElementById('location');
+var accordions = bulmaAccordion.attach();
 
 //Adding evenlisteners to functionality
 artist.addEventListener('click', function(event){
@@ -50,6 +51,3 @@ function getCountry() {
 }
 
 getCountry();
-
-
-

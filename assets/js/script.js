@@ -1,10 +1,10 @@
 //Declaring variables
-const artist = document.getElementById('artist');
-const genre = document.getElementById('genre');
-const locationEl = document.getElementById('location');
+const artistEl = document.getElementById('artist');
+const genreEl = document.getElementById('genre');
+const countryEl = document.getElementById('country');
 
 //Adding evenlisteners to functionality
-artist.addEventListener('click', function(event){
+artistEl.addEventListener('click', function(event){
     event.stopPropagation();
     if(artist.getAttribute('data-click') === 'true') {
         artist.setAttribute('data-click', 'false');
@@ -15,7 +15,7 @@ artist.addEventListener('click', function(event){
     }
 });
 
-genre.addEventListener('click', function(event){
+genreEl.addEventListener('click', function(event){
     event.stopPropagation();
     if(genre.getAttribute('data-click') === 'true') {
         genre.setAttribute('data-click', 'false');
@@ -26,27 +26,40 @@ genre.addEventListener('click', function(event){
     }
 });
 
-locationEl.addEventListener('click', function(event){
+countryEl.addEventListener('click', function(event){
     event.stopPropagation();
     if(locationEl.getAttribute('data-click') === 'true') {
         locationEl.setAttribute('data-click', 'false');
         console.log(locationEl.getAttribute('data-click'));
+
     }else {
         locationEl.setAttribute('data-click', 'true');
         console.log(locationEl.getAttribute('data-click'));
     }
 });
 
+// Generates random number based on maximum value
+function randomNumber(max){
+    return Math.floor(Math.random()*max);
+}
+
 //function for country API
-function getCountry() {
+function getRandomCountry() {
+    let countryObj = {
+        name: '',
+        code: ''
+    };
     let requestURL = 'https://restcountries.com/v3.1/all?fields=name,cca2';
     fetch(requestURL)
     .then(function(response) {
         return response.json();
     }) 
     .then(function(data){
-        console.log(data)
-    })
+        let random = randomNumber(data.length);
+        countryObj.name=data[random].name.common;
+        countryObj.code=data[random].cca2;
+    });
+    return countryObj;
 }
 
-getCountry();
+

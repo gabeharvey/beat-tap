@@ -4,11 +4,6 @@
 }
 
 header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 20px;
     color: yellow;
     border: 5px solid white;
     padding: 5px;
@@ -20,7 +15,6 @@ header {
 
 nav {
     position: bottom;
-    color: yellow;
     text-shadow: 0px 0px 0px;
     font-weight: bolder;
 }
@@ -28,14 +22,12 @@ nav {
 input {
     border-radius: 5px 5px 5px 5px;
     border: none;
-    margin-top: 20px;
     width: 82vw;
     height: 30px;
 }
 
 button {
     border-radius: 5px 5px 5px 5px;
-    margin-top: 2px;
     width: 14vw;
     height: 32px;
     border: none;
@@ -50,18 +42,10 @@ button {
     justify-content: space-between;
 }
 
-h2 {
-    color: yellow;
-    text-shadow: 0px 5px 5px orange, 0px 10px 10px red;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
 #artist {
     display: flex;
     justify-content: center;
     border: 5px solid white;
-    margin-top: 20px;
-    margin-bottom: 20px;
     border-radius: 10px 10px 10px 10px;
     width: 27vw;
     height: 300px;
@@ -73,8 +57,6 @@ h2 {
     display: flex;
     justify-content: center;
     border: 5px solid white;
-    margin-top: 20px;
-    margin-bottom: 20px;
     border-radius: 10px 10px 10px 10px;
     width: 27vw;
     height: 300px;
@@ -86,8 +68,6 @@ h2 {
     display: flex;
     justify-content: center;
     border: 5px solid white;
-    margin-top: 20px;
-    margin-bottom: 20px;
     border-radius: 10px 10px 10px 10px;
     width: 27vw;
     height: 300px;
@@ -98,10 +78,6 @@ h2 {
 footer {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 20px;
-    color: yellow;
     border: 5px solid white;
     padding: 5px;
     background-image: linear-gradient(to bottom, black, darkgray);

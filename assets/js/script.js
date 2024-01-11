@@ -37,6 +37,19 @@ locationEl.addEventListener('click', function(event){
     }
 });
 
-//Add html dynamics for dropdown menu
+//function for country API
+function getCountry() {
+    let requestURL = 'https://restcountries.com/v3.1/all?fields=name,cca2';
+    fetch(requestURL)
+    .then(function(response) {
+        return response.json();
+    }) 
+    .then(function(data){
+        console.log(data)
+    })
+}
+
+getCountry();
+
 
 

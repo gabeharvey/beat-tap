@@ -25,35 +25,35 @@
     <!-- added search bar -->
     <form class="mt-4">
         <input name= 'Search'  placeholder="Search by Artist, Genre, or Location ie Doja Cat, Pop, South Korea"/>
-        <button>Search</button>
+        <button id= "mainSearch" class = "is-active">Search</button>
     </form>
 
     <!-- creating container element -->
     <div id="mainContainer">
         <div id="artist" class="container my-3 mx-2" data-click="false">
-            <h2 class="is-size-4 is-uppercase has-text-weight-bold has-text-warning-light">Artist</h2>
+            <button type = "button" id="artistSearch" class="is-active">Artist</button>
             <ul class="artistList">
-              <li>Taylor Swift</li>
-              <li>Doja Cat</li>
-              <li>BTS</li>
+              <li class = "artistSong1">Taylor Swift</li>
+              <li class = "artistSong2">Doja Cat</li>
+              <li class = "artistSong3">BTS</li>
             </ul>
         </div>
 
         <div id="genre" class="container my-3 mx-2" data-click="false">
-            <h2 class="is-size-4 is-uppercase has-text-weight-bold has-text-warning-light">Genre</h2>
+            <button type = "button" id="genreSearch">Genre</button>
             <ul class="genreList">
-              <li>Pop</li>
-              <li>Classic Rock</li>
-              <li>Rap</li>
+              <li class = "genreSong1">Pop</li>
+              <li class = "genreSong2">Classic Rock</li>
+              <li class = "genreSong3">Rap</li>
             </ul>
         </div>
 
         <div id="country" class="container my-3 mx-2" data-click="false">
-            <h2 class="is-size-4 is-uppercase has-text-weight-bold has-text-warning-light">Country</h2>
+            <button type = "button" id="countrySearch">Country</button>
             <ul class="countryList">
-              <li>USA</li>
-              <li>South Korea</li>
-              <li>France</li>
+              <li class = "countrySong1">USA</li>
+              <li class = "countrySong2">South Korea</li>
+              <li class = "countrySong3">France</li>
             </ul>
         </div>
     </div>

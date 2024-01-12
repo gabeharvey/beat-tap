@@ -27,14 +27,20 @@ input {
     height: 30px;
 }
 
-button {
+#mainSearch {
     border-radius: 5px 5px 5px 5px;
     width: 14vw;
     height: 32px;
     border: none;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bolder;
-    font-size: 14px;
+    font-size: 18px;
+    background-color: red;
+    color: white;
+}
+
+#mainSearch:hover {
+    cursor: pointer;
 }
 
 #mainContainer {
@@ -55,6 +61,23 @@ button {
     box-shadow: 5px 5px 5px white;
     background-image: linear-gradient(to bottom, black, darkgray);
     opacity: .9;
+}
+
+#artistSearch {
+    margin: 10px;
+    border-radius: 5px 5px 5px 5px;
+    width: 14vw;
+    height: 32px;
+    border: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+    font-size: 25px;
+    background-color: red;
+    color: white;
+}
+
+#artistSearch:hover {
+    cursor: pointer;
 }
 
 .artistList {
@@ -79,6 +102,23 @@ button {
     opacity: .9;
 }
 
+#genreSearch {
+    margin: 10px;
+    border-radius: 5px 5px 5px 5px;
+    width: 14vw;
+    height: 32px;
+    border: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+    font-size: 25px;
+    background-color: red;
+    color: white;
+}
+
+#genreSearch:hover {
+    cursor: pointer;
+}
+
 .genreList {
     color: red;
     font-size: 30px;
@@ -99,6 +139,23 @@ button {
     box-shadow: 5px 5px 5px white;
     background-image: linear-gradient(to bottom, black, darkgray);
     opacity: .9;
+}
+
+#countrySearch {
+    margin: 10px;
+    border-radius: 5px 5px 5px 5px;
+    width: 14vw;
+    height: 32px;
+    border: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+    font-size: 25px;
+    background-color: red;
+    color: white;
+}
+
+#countrySearch:hover {
+    cursor: pointer;
 }
 
 .countryList {

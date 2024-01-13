@@ -72,32 +72,64 @@ function getRandomArtistSolo(artistNumber) {
 
 // Function to generate a random song by country
 function getSongCountry(code,countryNumber){
-    //let offset = [];
 
-    //Get the amount of total artists in country
+   //Get the amount of total artists in country
     let requestURL1='https://musicbrainz.org/ws/2/artist/?query=country:'+code+'&fmt=json';
     fetch(requestURL1)
     .then(function(response){
         return response.json();
     })
     .then(function(data){
-        localStorage.setItem('offset-song-country',randomNumber(data.count));
+        localStorage.setItem('offset-artist-country'+countryNumber,randomNumber(data.count));
     });
 
     //Get an artist in country
     let artist;
-    let requestURL2='https://musicbrainz.org/ws/2/artist/?query=country:'+code+'&fmt=json&limit=100&offset='+localStorage.getItem('offset-song-country');
-    console.log(requestURL2);
+    let requestURL2='https://musicbrainz.org/ws/2/artist/?query=country:'+code+'&fmt=json&limit=100&offset='+JSON.parse(localStorage.getItem('offset-artist-country'+countryNumber));
     fetch(requestURL2)
     .then(function(response){
         return response.json();
     })
     .then(function(data){
         let random=randomNumber(data.artists.length);
-        artist=data.artists[random].name;
+        artist=data.artists[random].id;
         localStorage.setItem('artist-country-temp'+countryNumber,JSON.stringify(artist));
     });
 
+    // Get total songs of artist
+    let requestURL3='https://musicbrainz.org/ws/2/artist/'+JSON.parse(localStorage.getItem('artist-country-temp'+countryNumber))+'?inc=recordings&fmt=json';
+    fetch(requestURL3)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        if(data.recordings.length){
+            localStorage.setItem('total-songs-country'+countryNumber,JSON.stringify(data.recordings.length));
+            console.log(data.recordings);
+        } else {
+            localStorage.setItem('total-songs-country'+countryNumber,0);
+        }
+    });
+
+    if(JSON.parse(localStorage.getItem('total-songs-country'+countryNumber))!==0) {
+        // Get a song by artist
+        let requestURL4='https://musicbrainz.org/ws/2/artist/'+JSON.parse(localStorage.getItem('artist-country-temp'+countryNumber))+'?inc=recordings&fmt=json';
+        fetch(requestURL4)
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            let random=randomNumber(JSON.parse(localStorage.getItem('total-songs-country'+countryNumber))-1);
+            if(data.recordings[random].title){
+                localStorage.setItem('song-country'+countryNumber,JSON.stringify(data.recordings[random].title));
+            } else {
+                localStorage.setItem('song-country'+countryNumber,JSON.stringify(data.recordings[random].name));
+            }
+        });
+    } else {
+        localStorage.setItem('song-country'+countryNumber,JSON.stringify('No titles to display'));
+    }
+
 }
 
-getSongCountry('GB',2);
+getSongCountry('KR',2);

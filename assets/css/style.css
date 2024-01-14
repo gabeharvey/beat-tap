@@ -28,6 +28,12 @@ input {
     opacity: .9;
 }
 
+#search-bar{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+}
+
 #mainSearch {
     border-radius: 5px 5px 5px 5px;
     width: 100px;
@@ -48,7 +54,7 @@ input {
 #mainContainer {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 #artist {

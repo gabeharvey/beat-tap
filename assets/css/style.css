@@ -30,7 +30,7 @@ input {
 
 #mainSearch {
     border-radius: 5px 5px 5px 5px;
-    width: 14vw;
+    width: 100px;
     height: 32px;
     border: none;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -68,7 +68,7 @@ input {
 #artistSearch {
     margin: 10px;
     border-radius: 5px 5px 5px 5px;
-    width: 14vw;
+    width: 120px;
     height: 32px;
     border: none;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -107,7 +107,7 @@ input {
 #countrySearch {
     margin: 10px;
     border-radius: 5px 5px 5px 5px;
-    width: 14vw;
+    width: 120px;
     height: 32px;
     border: none;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;

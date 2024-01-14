@@ -15,7 +15,7 @@ function getRandomCountry() {
         return response.json();
     }) 
     .then(function(data){
-        let random = randomNumber(data.length);
+        let random = randomNumber(data.length-1);
         countryObj.name=data[random].name.common;
         countryObj.code=data[random].cca2;
     });
@@ -32,7 +32,7 @@ function getRandomGenre(genreNumber) {
         return response.json();
     })
     .then(function(data){
-        let random = randomNumber(data.genres.length);
+        let random = randomNumber(data.genres.length-1);
         randomGenre=data.genres[random].name;
         localStorage.setItem('genre'+genreNumber,JSON.stringify(randomGenre));
         localStorage.setItem('genre-id'+genreNumber,JSON.stringify(data.genres[random].id));
@@ -49,7 +49,7 @@ function getRandomArtistGroup(artistNumber) {
         return response.json();
     })
     .then(function(data){
-        let random = randomNumber(data.artists.length);
+        let random = randomNumber(data.artists.length-1);
         randomArtist=data.artists[random].name;
         localStorage.setItem('artist'+artistNumber,JSON.stringify(randomArtist));
     });
@@ -65,7 +65,7 @@ function getRandomArtistSolo(artistNumber) {
         return response.json();
     })
     .then(function(data){
-        let random = randomNumber(data.artists.length);
+        let random = randomNumber(data.artists.length-1);
         randomArtist=data.artists[random].name;
         localStorage.setItem('artist'+artistNumber,JSON.stringify(randomArtist));
     });
@@ -92,7 +92,7 @@ function getSongCountry(code,countryNumber){
         return response.json();
     })
     .then(function(data){
-        let random=randomNumber(data.artists.length);
+        let random=randomNumber(data.artists.length-1);
         artist=data.artists[random].name;
         localStorage.setItem('artist-country-name'+countryNumber,JSON.stringify(artist));
     });
@@ -137,7 +137,4 @@ function getSongArtist(artist,artistNumber){
    });
 
 }
-
-
-
 

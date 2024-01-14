@@ -23,30 +23,62 @@
   <main>
 
     <!-- added search bar -->
-    <form class="mt-4">
+    <form class="mt-4" id="search-bar">
         <input name= 'Search'  placeholder="Search by Artist or Country ie Doja Cat, South Korea"/>
         <button id= "mainSearch" class = "is-active">Search</button>
     </form>
 
     <!-- creating container element -->
     <div id="mainContainer">
-        <div id="artist" class="container my-3 mx-2" data-click="false">
-            <button type = "button" id="artistSearch" class="is-active">Artist</button>
-            <ul class="artistList">
-              <li class = "artistSong1">Taylor Swift</li>
-              <li class = "artistSong2">Doja Cat</li>
-              <li class = "artistSong3">BTS</li>
-            </ul>
+
+        <div class="dropdown" id="artist-dropdown">
+          <div class="dropdown-trigger">
+            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu" id="artistSearch" data-click="false">
+              <span>Artist</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <div class="dropdown-content artistList">
+              <a href="#" class="dropdown-item" id="artist-1">
+                Taylor Swift
+              </a>
+              <a class="dropdown-item" id="artist-2">
+                Doja Cat
+              </a>
+              <a href="#" class="dropdown-item" id="artist-3">
+                BTS
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div id="country" class="container my-3 mx-2" data-click="false">
-            <button type = "button" id="countrySearch">Country</button>
-            <ul class="countryList">
-              <li class = "countrySong1">USA</li>
-              <li class = "countrySong2">South Korea</li>
-              <li class = "countrySong3">France</li>
-            </ul>
+        <div class="dropdown" id="country-dropdown">
+          <div class="dropdown-trigger">
+            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu" id="countrySearch" data-click="false">
+              <span>Country</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <div class="dropdown-content countryList">
+              <a href="#" class="dropdown-item" id="country-1">
+                South Korea
+              </a>
+              <a class="dropdown-item" id="country-2">
+                United States
+              </a>
+              <a href="#" class="dropdown-item" id="country-3">
+                Germany
+              </a>
+            </div>
+          </div>
         </div>
+
     </div>
   </main>
   <footer>

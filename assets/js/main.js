@@ -1,40 +1,40 @@
 //Declaring variables
-const artistEl = document.getElementById('artist');
-const genreEl = document.getElementById('genre');
-const countryEl = document.getElementById('country');
+const artistSearch = document.getElementById('artistSearch');
+const genreSearch = document.getElementById('genreSearch');
+const countrySearch = document.getElementById('countrySearch');
 
 //Adding evenlisteners to functionality
-artistEl.addEventListener('click', function(event){
+artistSearch.addEventListener('click', function(event){
     event.stopPropagation();
-    if(artistEl.getAttribute('data-click') === 'true') {
-        artistEl.setAttribute('data-click', 'false');
-        console.log(artistEl.getAttribute('data-click'));
+    if(artistSearch.getAttribute('data-click') === 'true') {
+        artistSearch.setAttribute('data-click', 'false');
+        console.log(artistSearch.getAttribute('data-click'));
     }else {
-        artistEl.setAttribute('data-click', 'true');
-        console.log(artistEl.getAttribute('data-click'));
+        artistSearch.setAttribute('data-click', 'true');
+        console.log(artistSearch.getAttribute('data-click'));
     }
 });
 
-genreEl.addEventListener('click', function(event){
+genreSearch.addEventListener('click', function(event){
     event.stopPropagation();
-    if(genreEl.getAttribute('data-click') === 'true') {
-        genreEl.setAttribute('data-click', 'false');
-        console.log(genreEl.getAttribute('data-click'));
+    if(genreSearch.getAttribute('data-click') === 'true') {
+        genreSearch.setAttribute('data-click', 'false');
+        console.log(genreSearch.getAttribute('data-click'));
     }else {
-        genreEl.setAttribute('data-click', 'true');
-        console.log(genreEl.getAttribute('data-click'));
+        genreSearch.setAttribute('data-click', 'true');
+        console.log(genreSearch.getAttribute('data-click'));
     }
 });
 
-countryEl.addEventListener('click', function(event){
+countrySearch.addEventListener('click', function(event){
     event.stopPropagation();
-    if(countryEl.getAttribute('data-click') === 'true') {
-        countryEl.setAttribute('data-click', 'false');
-        console.log(countryEl.getAttribute('data-click'));
+    if(countrySearch.getAttribute('data-click') === 'true') {
+        countrySearch.setAttribute('data-click', 'false');
+        console.log(countrySearch.getAttribute('data-click'));
 
     }else {
-        countryEl.setAttribute('data-click', 'true');
-        console.log(countryEl.getAttribute('data-click'));
+        countrySearch.setAttribute('data-click', 'true');
+        console.log(countrySearch.getAttribute('data-click'));
     }
 });
 

@@ -35,6 +35,7 @@ function getRandomGenre(genreNumber) {
         let random = randomNumber(data.genres.length);
         randomGenre=data.genres[random].name;
         localStorage.setItem('genre'+genreNumber,JSON.stringify(randomGenre));
+        localStorage.setItem('genre-id'+genreNumber,JSON.stringify(data.genres[random].id));
     });
 }
 
@@ -92,66 +93,47 @@ function getSongCountry(code,countryNumber){
     })
     .then(function(data){
         let random=randomNumber(data.artists.length);
-        artist=data.artists[random].id;
-        localStorage.setItem('artist-country-id'+countryNumber,JSON.stringify(artist));
+        artist=data.artists[random].name;
+        localStorage.setItem('artist-country-name'+countryNumber,JSON.stringify(artist));
     });
 
     // Get song by artist
-    let requestURL3='https://musicbrainz.org/ws/2/artist/'+JSON.parse(localStorage.getItem('artist-country-id'+countryNumber))+'?inc=works&fmt=json';
-    let request;
-    fetch(requestURL3)
+    let requestURL='https://itunes.apple.com/search?term='+JSON.parse(localStorage.getItem('artist-country-name'+countryNumber))+'&entity=song&attribute=artistTerm&country='+code;
+    console.log(requestURL);
+    fetch(requestURL)
     .then(function(response){
-        request=response.status
-        return response.json();
+     return response.json();
     })
     .then(function(data){
-        if(request!==200){
-            localStorage.setItem('song-country'+countryNumber,JSON.stringify('Error: Try Again'));
+        if (data.resultCount===0){
+            localStorage.setItem('song-country'+countryNumber,JSON.stringify(''));
+            localStorage.setItem('song-artist-name-country'+countryNumber,JSON.stringify(''));
         } else {
-            if(data.works.length===0){
-                localStorage.setItem('song-country'+countryNumber,JSON.stringify('null'));
-            } else{
-                let random=randomNumber(data.works.length-1);
-                localStorage.setItem('song-country'+countryNumber,JSON.stringify(data.works[random].title));
-            }
+            let random=randomNumber(data.resultCount-1);
+            localStorage.setItem('song-country'+countryNumber,JSON.stringify(data.results[random].trackName));
+            localStorage.setItem('song-artist-name-country'+countryNumber,JSON.stringify(data.results[random].artistName));
         }
     });
     
-
 }
 
-// Function to generate a random song by country
+// Function to generate a random song by artist
 function getSongArtist(artist,artistNumber){
     
-    //Get the artist id
-    let requestURL1='https://musicbrainz.org/ws/2/artist/?query=artist:'+artist+'&fmt=json';
-     fetch(requestURL1)
-     .then(function(response){
-        return response.json();
-     })
-     .then(function(data){
-        localStorage.setItem('artist-id'+artistNumber,JSON.stringify(data.artists[0].id));
-     });
+  let artistName=artist.replace(' ','+');
+   let requestURL='https://itunes.apple.com/search?term='+artistName+'&entity=song&attribute=artistTerm';
+   fetch(requestURL)
+   .then(function(response){
+    return response.json();
+   })
+   .then(function(data){
+    let random=randomNumber(data.resultCount-1);
+    localStorage.setItem('song-artist'+artistNumber,JSON.stringify(data.results[random].trackName));
+    localStorage.setItem('artist-name-artist'+artistNumber,JSON.stringify(data.results[random].artistName));
+   });
 
-    // Get song by artist
-    let requestURL2='https://musicbrainz.org/ws/2/artist/'+JSON.parse(localStorage.getItem('artist-id'+artistNumber))+'?inc=works&fmt=json';
-    let request;
-    fetch(requestURL2)
-    .then(function(response){
-        request=response.status
-        return response.json();
-    })
-    .then(function(data){
-        if(request!==200){
-            localStorage.setItem('song-artist'+artistNumber,JSON.stringify('Error: Try Again'));
-        } else {
-            if(data.works.length===0){
-                localStorage.setItem('song-artist'+artistNumber,JSON.stringify('null'));
-            } else{
-                let random=randomNumber(data.works.length-1);
-                localStorage.setItem('song-artist'+artistNumber,JSON.stringify(data.works[random].title));
-            }
-        }
-    });
- 
 }
+
+
+
+

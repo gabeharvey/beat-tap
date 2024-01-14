@@ -25,6 +25,7 @@ input {
     border: none;
     width: 82vw;
     height: 30px;
+    opacity: .9;
 }
 
 #mainSearch {
@@ -37,6 +38,7 @@ input {
     font-size: 18px;
     background-color: red;
     color: white;
+    opacity: .9;
 }
 
 #mainSearch:hover {
@@ -56,7 +58,7 @@ input {
     align-items: center;
     border: 5px solid white;
     border-radius: 10px 10px 10px 10px;
-    width: 27vw;
+    width: 45vw;
     height: 300px;
     box-shadow: 5px 5px 5px white;
     background-image: linear-gradient(to bottom, black, darkgray);
@@ -88,45 +90,6 @@ input {
     text-shadow: 0px 2px 2px white;
 }
 
-#genre {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    border: 5px solid white;
-    border-radius: 10px 10px 10px 10px;
-    width: 27vw;
-    height: 300px;
-    box-shadow: 5px 5px 5px white;
-    background-image: linear-gradient(to bottom, black, darkgray);
-    opacity: .9;
-}
-
-#genreSearch {
-    margin: 10px;
-    border-radius: 5px 5px 5px 5px;
-    width: 14vw;
-    height: 32px;
-    border: none;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: bolder;
-    font-size: 25px;
-    background-color: red;
-    color: white;
-}
-
-#genreSearch:hover {
-    cursor: pointer;
-}
-
-.genreList {
-    color: red;
-    font-size: 30px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: bold;
-    text-shadow: 0px 2px 2px white;
-}
-
 #country {
     display: flex;
     flex-direction: column;
@@ -134,7 +97,7 @@ input {
     align-items: center;
     border: 5px solid white;
     border-radius: 10px 10px 10px 10px;
-    width: 27vw;
+    width: 45vw;
     height: 300px;
     box-shadow: 5px 5px 5px white;
     background-image: linear-gradient(to bottom, black, darkgray);

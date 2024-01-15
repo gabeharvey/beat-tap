@@ -51,7 +51,7 @@ input {
     cursor: pointer;
 }
 
-#mainContainer {
+#dropdownContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;

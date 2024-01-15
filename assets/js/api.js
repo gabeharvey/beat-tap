@@ -4,11 +4,7 @@ function randomNumber(max){
 }
 
 //Function for country API
-function getRandomCountry() {
-    let countryObj = {
-        name: '',
-        code: ''
-    };
+function getRandomCountry(countryNumber) {
     let requestURL = 'https://restcountries.com/v3.1/all?fields=name,cca2';
     fetch(requestURL)
     .then(function(response) {
@@ -16,26 +12,8 @@ function getRandomCountry() {
     }) 
     .then(function(data){
         let random = randomNumber(data.length-1);
-        countryObj.name=data[random].name.common;
-        countryObj.code=data[random].cca2;
-    });
-    return countryObj;
-}
-
-//Function to generate a random genre
-function getRandomGenre(genreNumber) {
-    let randomGenre;
-    let offset = randomNumber(1800);
-    let requestURL='https://musicbrainz.org/ws/2/genre/all?limit=100&offset='+offset+'&fmt=json';
-    fetch(requestURL)
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(data){
-        let random = randomNumber(data.genres.length-1);
-        randomGenre=data.genres[random].name;
-        localStorage.setItem('genre'+genreNumber,JSON.stringify(randomGenre));
-        localStorage.setItem('genre-id'+genreNumber,JSON.stringify(data.genres[random].id));
+        localStorage.setItem('country-name'+countryNumber,JSON.stringify(data[random].name.common));
+        localStorage.setItem('country-code'+countryNumber,JSON.stringify(data[random].cca2));
     });
 }
 

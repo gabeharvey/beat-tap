@@ -82,6 +82,7 @@ function getSongCountry(code,countryNumber){
      return response.json();
     })
     .then(function(data){
+        console.log(data);
         if (data.resultCount===0){
             localStorage.setItem('song-country'+countryNumber,JSON.stringify(''));
             localStorage.setItem('song-artist-name-country'+countryNumber,JSON.stringify(''));

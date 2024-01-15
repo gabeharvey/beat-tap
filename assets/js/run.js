@@ -13,19 +13,9 @@ const countryOne = document.getElementById('country-1');
 const countryTwo = document.getElementById('country-2');
 const countryThree = document.getElementById('country-3');
 
-const songContainer = document.getElementById('song-container');
+const songName = document.getElementById('song-name');
+const songArtist =document.getElementById('song-artist');
 
-function fetchOptions() {
-    // Set Random Artists
-    getRandomArtistSolo(1);
-    getRandomArtistGroup(2);
-    getRandomArtistSolo(3);
-
-    // Set Random Countries
-    getRandomCountry(1);
-    getRandomCountry(2);
-    getRandomCountry(3);
-}
 
 function run(){
 
@@ -37,7 +27,7 @@ function run(){
     countryTwo.textContent = JSON.parse(localStorage.getItem('country-name2'));
     countryThree.textContent = JSON.parse(localStorage.getItem('country-name3'));
 
-    //Event Listners for Dropdown Menus
+    //Event Listeners for Dropdown Menus
     artistSearch.addEventListener('click', function(event){
         event.stopPropagation();
         if(artistSearch.getAttribute('data-click') === 'true') {
@@ -61,19 +51,37 @@ function run(){
         }
     });
 
-    // Song by Artist Option Display Event Listners
+    // Song by Artist Option Display Event Listeners
     artistOne.addEventListener('click', function(event){
+        // Clear Current Song from Storage
+        clearSongs();
+        // Get Song by Artist
+        getSongArtist(JSON.parse(localStorage.getItem('artist1')),1);
+        // Stop Propagation
         event.stopPropagation();
+        // Dropdown Menu Settings
         artistSearch.setAttribute('data-click', 'false');
         artistDropdown.setAttribute('class','dropdown');
     });
     artistTwo.addEventListener('click', function(event){
+        // Clear Current Song from Storage
+        clearSongs();
+        // Get Song by Artist
+        getSongArtist(JSON.parse(localStorage.getItem('artist2')),2);
+        // Stop Propagation
         event.stopPropagation();
+        // Dropdown Menu Settings
         artistSearch.setAttribute('data-click', 'false');
         artistDropdown.setAttribute('class','dropdown');
     });
     artistThree.addEventListener('click', function(event){
+        // Clear Current Song from Storage
+        clearSongs();
+        // Get Song by Artist
+        getSongArtist(JSON.parse(localStorage.getItem('artist3')),3);
+        // Stop Propagation
         event.stopPropagation();
+        // Dropdown Menu Settings
         artistSearch.setAttribute('data-click', 'false');
         artistDropdown.setAttribute('class','dropdown');
     });
@@ -85,6 +93,7 @@ function run(){
     
     // Song by Country Option Display Event Listners
     countryOne.addEventListener('click', function(event){
+        // Clear Current Song from Storage
         clearSongs();
         // Get Song in Country
         getSongCountry(JSON.parse(localStorage.getItem('country-code1')),1);
@@ -95,6 +104,7 @@ function run(){
         countryDropdown.setAttribute('class','dropdown');
     });
     countryTwo.addEventListener('click', function(event){
+        // Clear Current Song from Storage
         clearSongs();
         // Get Song in Country
         getSongCountry(JSON.parse(localStorage.getItem('country-code2')),2);
@@ -105,9 +115,10 @@ function run(){
         countryDropdown.setAttribute('class','dropdown');
     });
     countryThree.addEventListener('click', function(event){
+        // Clear Current Song from Storage
         clearSongs();
         // Get Song in Country
-        getSongCountry(JSON.parse(localStorage.getItem('country-code1')),1);
+        getSongCountry(JSON.parse(localStorage.getItem('country-code3')),3);
         // Stop Propagation
         event.stopPropagation();
         // Dropdown Menu Settings

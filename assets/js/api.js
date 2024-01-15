@@ -9,6 +9,7 @@ function getRandomCountry(countryNumber) {
     fetch(requestURL)
     .then(function(response) {
         if (response.status!==200){
+            localStorage.clear();
             window.location.replace('./index.html');
         } else {
             return response.json();
@@ -29,6 +30,7 @@ function getRandomArtistGroup(artistNumber) {
     fetch(requestURL)
     .then(function(response){
         if (response.status!==200){
+            localStorage.clear();
             window.location.replace('./index.html');
         } else {
             return response.json();
@@ -53,6 +55,7 @@ function getRandomArtistSolo(artistNumber) {
     fetch(requestURL)
     .then(function(response){
         if (response.status!==200){
+            localStorage.clear();
             window.location.replace('./index.html');
         } else {
             return response.json();
@@ -78,6 +81,7 @@ function getArtistCountry(code,countryNumber){
     fetch(requestURL1)
     .then(function(response){
         if (response.status!==200){
+            localStorage.clear();
             window.location.replace('./index.html');
         } else {
             return response.json();
@@ -92,7 +96,12 @@ function getArtistCountry(code,countryNumber){
     let requestURL2='https://musicbrainz.org/ws/2/artist/?query=country:'+code+'&fmt=json&limit=100&offset='+offset;
     fetch(requestURL2)
     .then(function(response){
-        return response.json();
+        if (response.status!==200){
+            localStorage.clear();
+            window.location.replace('./index.html');
+        } else {
+            return response.json();
+        }
     })
     .then(function(data){
         let random=randomNumber(data.artists.length-1);
@@ -107,6 +116,7 @@ function getSongCountry(code,countryNumber){
     fetch(requestURL)
     .then(function(response){
         if (response.status!==200){
+            localStorage.clear();
             window.location.replace('./index.html');
         } else {
             return response.json();
@@ -132,6 +142,7 @@ function getSongArtist(artist,artistNumber){
    fetch(requestURL)
    .then(function(response){
         if (response.status!==200){
+            localStorage.clear();
             window.location.replace('./index.html');
         } else {
             return response.json();

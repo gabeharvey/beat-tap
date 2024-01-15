@@ -50,7 +50,7 @@ function getRandomArtistSolo(artistNumber) {
 }
 
 // Function to generate a random song by country
-function getSongCountry(code,countryNumber){
+function getArtistCountry(code,countryNumber){
 
    //Get the amount of total artists in country
     let requestURL1='https://musicbrainz.org/ws/2/artist/?query=country:'+code+'&fmt=json';
@@ -74,7 +74,9 @@ function getSongCountry(code,countryNumber){
         artist=data.artists[random].name;
         localStorage.setItem('artist-country-name'+countryNumber,JSON.stringify(artist));
     });
+}
 
+function getSongCountry(code,countryNumber){
     // Get song by artist
     let requestURL3='https://itunes.apple.com/search?term='+JSON.parse(localStorage.getItem('artist-country-name'+countryNumber))+'&entity=song&attribute=artistTerm&country='+code;
     fetch(requestURL3)
@@ -82,7 +84,6 @@ function getSongCountry(code,countryNumber){
      return response.json();
     })
     .then(function(data){
-        console.log(data);
         if (data.resultCount===0){
             localStorage.setItem('song-country'+countryNumber,JSON.stringify(''));
             localStorage.setItem('song-artist-name-country'+countryNumber,JSON.stringify(''));
@@ -92,7 +93,6 @@ function getSongCountry(code,countryNumber){
             localStorage.setItem('song-artist-name-country'+countryNumber,JSON.stringify(data.results[random].artistName));
         }
     });
-    
 }
 
 // Function to generate a random song by artist

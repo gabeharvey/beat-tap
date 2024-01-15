@@ -78,18 +78,26 @@ function run(){
         artistDropdown.setAttribute('class','dropdown');
     });
 
+    // Get Artist in Country
+    getArtistCountry(JSON.parse(localStorage.getItem('country-code1')),1);
+    getArtistCountry(JSON.parse(localStorage.getItem('country-code2')),2);
+    getArtistCountry(JSON.parse(localStorage.getItem('country-code3')),3);
+    
     // Song by Country Option Display Event Listners
     countryOne.addEventListener('click', function(event){
+        getSongCountry(JSON.parse(localStorage.getItem('country-code1')),1);
         event.stopPropagation();
         countrySearch.setAttribute('data-click', 'false');
         countryDropdown.setAttribute('class','dropdown');
     });
     countryTwo.addEventListener('click', function(event){
+        getSongCountry(JSON.parse(localStorage.getItem('country-code2')),2);
         event.stopPropagation();
         countrySearch.setAttribute('data-click', 'false');
         countryDropdown.setAttribute('class','dropdown');
     });
     countryThree.addEventListener('click', function(event){
+        getSongCountry(JSON.parse(localStorage.getItem('country-code1')),1);
         event.stopPropagation();
         countrySearch.setAttribute('data-click', 'false');
         countryDropdown.setAttribute('class','dropdown');

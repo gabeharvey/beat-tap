@@ -15,25 +15,28 @@ const countryThree = document.getElementById('country-3');
 
 const songContainer = document.getElementById('song-container');
 
-function setOptions() {
+function fetchOptions() {
 // Set Random Artists in Dropdown Menu
 getRandomArtistSolo(1);
 getRandomArtistGroup(2);
 getRandomArtistSolo(3);
-artistOne.textContent = JSON.parse(localStorage.getItem('artist1'));
-artistTwo.textContent = JSON.parse(localStorage.getItem('artist2'));
-artistThree.textContent = JSON.parse(localStorage.getItem('artist3'));
 
 // Set Random Countries in Dropdown Menu
 getRandomCountry(1);
 getRandomCountry(2);
 getRandomCountry(3);
-countryOne.textContent = JSON.parse(localStorage.getItem('country-name1'));
-countryTwo.textContent = JSON.parse(localStorage.getItem('country-name2'));
-countryThree.textContent = JSON.parse(localStorage.getItem('country-name3'));
 }
 
 function run(){
+
+    artistOne.textContent = JSON.parse(localStorage.getItem('artist1'));
+    artistTwo.textContent = JSON.parse(localStorage.getItem('artist2'));
+    artistThree.textContent = JSON.parse(localStorage.getItem('artist3'));
+
+countryOne.textContent = JSON.parse(localStorage.getItem('country-name1'));
+countryTwo.textContent = JSON.parse(localStorage.getItem('country-name2'));
+countryThree.textContent = JSON.parse(localStorage.getItem('country-name3'));
+
 //Event Listners for Dropdown Menus
 artistSearch.addEventListener('click', function(event){
 event.stopPropagation();

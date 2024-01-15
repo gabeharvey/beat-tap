@@ -3,92 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beat Tap Loading</title>
     <link href="./assets/css/style.css" rel="stylesheet">
-    <title>Beat Tap</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
 </head>
-<body background="./assets/images/metal-display-screen.jpg">
-  <header>
-    <!-- Title and anchor tags for login and sign up features -->
-    <h1 class="is-size-1 is-uppercase has-text-weight-bold">Beat Tap</h1>
-    <nav class="has-text-right">
-
-
-        <a class="has-text-warning">Login</a>
-        <a class="has-text-warning">Sign up</a>
-
-    </nav>
-  </header>
-
-  <main>
-
-    <!-- added search bar -->
-    <form class="mt-4" id="search-bar">
-        <input name= 'Search'  placeholder="Search by Artist or Country ie Doja Cat, South Korea"/>
-        <button id= "mainSearch" class = "is-active">Search</button>
-    </form>
-
-    <!-- creating container element -->
-    <div id="dropdownContainer">
-
-        <div class="dropdown" id="artist-dropdown">
-          <div class="dropdown-trigger">
-            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu" id="artistSearch" data-click="false">
-              <span>Artist</span>
-              <span class="icon is-small">
-                <i class="fas fa-angle-down" aria-hidden="true"></i>
-              </span>
-            </button>
-          </div>
-          <div class="dropdown-menu" id="dropdown-menu" role="menu">
-            <div class="dropdown-content artistList">
-              <a href="#" class="dropdown-item" id="artist-1">
-                Taylor Swift
-              </a>
-              <a class="dropdown-item" id="artist-2">
-                Doja Cat
-              </a>
-              <a href="#" class="dropdown-item" id="artist-3">
-                BTS
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="dropdown" id="country-dropdown">
-          <div class="dropdown-trigger">
-            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu" id="countrySearch" data-click="false">
-              <span>Country</span>
-              <span class="icon is-small">
-                <i class="fas fa-angle-down" aria-hidden="true"></i>
-              </span>
-            </button>
-          </div>
-          <div class="dropdown-menu" id="dropdown-menu" role="menu">
-            <div class="dropdown-content countryList">
-              <a href="#" class="dropdown-item" id="country-1">
-                South Korea
-              </a>
-              <a class="dropdown-item" id="country-2">
-                United States
-              </a>
-              <a href="#" class="dropdown-item" id="country-3">
-                Germany
-              </a>
-            </div>
-          </div>
-        </div>
-
-    </div>
-
-    <div id="song-container"></div>
-    </div>
-  </main>
-  <footer>
-    <p class="has-text-centered has-text-weight-bold has-text-warning">Brought to you by The Double Clicks</p>
-    <p class="has-text-centered has-text-weight-bold has-text-warning">Copyright &copy 2024</p>
-  </footer>
-  <script src="./assets/js/api.js"></script>
-  <script src="./assets/js/main.js"></script>
+<body background="./assets/images/metal-display.jpg">
+    <header>
+        <h1 class="is-uppercase has-text-weight-bold has-text-centered" id="loading"><a id="loading" href="./main.html">Beat Tap</a></h1>
+        <p id="loadingPara">Presented by The Double Clicks</p>
+    </header>
+    <script src="./assets/js/api.js"></script> 
+    <script src="./assets/js/dom-functions.js"></script>
+    <script src="./assets/js/loading.js"></script>
 </body>
 </html>

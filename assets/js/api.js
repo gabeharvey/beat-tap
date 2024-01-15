@@ -8,7 +8,11 @@ function getRandomCountry(countryNumber) {
     let requestURL = 'https://restcountries.com/v3.1/all?fields=name,cca2';
     fetch(requestURL)
     .then(function(response) {
-        return response.json();
+        if (response.status!==200){
+            window.location.replace('./index.html');
+        } else {
+            return response.json();
+        }
     }) 
     .then(function(data){
         let random = randomNumber(data.length-1);
@@ -24,12 +28,20 @@ function getRandomArtistGroup(artistNumber) {
     let requestURL='https://musicbrainz.org/ws/2/artist/?query=type:group&fmt=json&limit=100&offset='+offset;
     fetch(requestURL)
     .then(function(response){
-        return response.json();
+        if (response.status!==200){
+            window.location.replace('./index.html');
+        } else {
+            return response.json();
+        }
     })
     .then(function(data){
-        let random = randomNumber(data.artists.length-1);
-        randomArtist=data.artists[random].name;
-        localStorage.setItem('artist'+artistNumber,JSON.stringify(randomArtist));
+        if (data.artists.length!==0){
+            let random = randomNumber(data.artists.length-1);
+            randomArtist=data.artists[random].name;
+            localStorage.setItem('artist'+artistNumber,JSON.stringify(randomArtist));
+        } else {
+            localStorage.setItem('artist'+artistNumber,JSON.stringify(''));
+        }
     });
 }
 
@@ -40,12 +52,20 @@ function getRandomArtistSolo(artistNumber) {
     let requestURL='https://musicbrainz.org/ws/2/artist/?query=type:person&fmt=json&limit=100&offset='+offset;
     fetch(requestURL)
     .then(function(response){
-        return response.json();
+        if (response.status!==200){
+            window.location.replace('./index.html');
+        } else {
+            return response.json();
+        }
     })
     .then(function(data){
-        let random = randomNumber(data.artists.length-1);
-        randomArtist=data.artists[random].name;
-        localStorage.setItem('artist'+artistNumber,JSON.stringify(randomArtist));
+        if (data.artists.length!==0){
+            let random = randomNumber(data.artists.length-1);
+            randomArtist=data.artists[random].name;
+            localStorage.setItem('artist'+artistNumber,JSON.stringify(randomArtist));
+        } else {
+            localStorage.setItem('artist'+artistNumber,JSON.stringify(''));
+        }
     });
 }
 
@@ -53,18 +73,23 @@ function getRandomArtistSolo(artistNumber) {
 function getArtistCountry(code,countryNumber){
 
    //Get the amount of total artists in country
+    let offset;
     let requestURL1='https://musicbrainz.org/ws/2/artist/?query=country:'+code+'&fmt=json';
     fetch(requestURL1)
     .then(function(response){
-        return response.json();
+        if (response.status!==200){
+            window.location.replace('./index.html');
+        } else {
+            return response.json();
+        }
     })
     .then(function(data){
-        localStorage.setItem('offset-artist-country'+countryNumber,randomNumber(data.count));
+        offset=randomNumber(data.count);
     });
 
     //Get an artist in country
     let artist;
-    let requestURL2='https://musicbrainz.org/ws/2/artist/?query=country:'+code+'&fmt=json&limit=100&offset='+JSON.parse(localStorage.getItem('offset-artist-country'+countryNumber));
+    let requestURL2='https://musicbrainz.org/ws/2/artist/?query=country:'+code+'&fmt=json&limit=100&offset='+offset;
     fetch(requestURL2)
     .then(function(response){
         return response.json();
@@ -78,10 +103,14 @@ function getArtistCountry(code,countryNumber){
 
 function getSongCountry(code,countryNumber){
     // Get song by artist
-    let requestURL3='https://itunes.apple.com/search?term='+JSON.parse(localStorage.getItem('artist-country-name'+countryNumber))+'&entity=song&attribute=artistTerm&country='+code;
-    fetch(requestURL3)
+    let requestURL='https://itunes.apple.com/search?term='+JSON.parse(localStorage.getItem('artist-country-name'+countryNumber))+'&entity=song&attribute=artistTerm&country='+code;
+    fetch(requestURL)
     .then(function(response){
-     return response.json();
+        if (response.status!==200){
+            window.location.replace('./index.html');
+        } else {
+            return response.json();
+        }
     })
     .then(function(data){
         if (data.resultCount===0){
@@ -102,7 +131,11 @@ function getSongArtist(artist,artistNumber){
     let requestURL='https://itunes.apple.com/search?term='+artistName+'&entity=song&attribute=artistTerm';
    fetch(requestURL)
    .then(function(response){
-    return response.json();
+        if (response.status!==200){
+            window.location.replace('./index.html');
+        } else {
+            return response.json();
+        }
    })
    .then(function(data){
     if (data.resultCount===0){

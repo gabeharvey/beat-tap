@@ -29,7 +29,7 @@ function fetchOptions() {
 
 function run(){
 
-    // Set Options in Dropdown Menus
+    // Display Options in Dropdown Menus
     artistOne.textContent = JSON.parse(localStorage.getItem('artist1'));
     artistTwo.textContent = JSON.parse(localStorage.getItem('artist2'));
     artistThree.textContent = JSON.parse(localStorage.getItem('artist3'));
@@ -85,20 +85,29 @@ function run(){
     
     // Song by Country Option Display Event Listners
     countryOne.addEventListener('click', function(event){
+        // Get Song in Country
         getSongCountry(JSON.parse(localStorage.getItem('country-code1')),1);
+        // Stop Propagation
         event.stopPropagation();
+        // Dropdown Menu Settings
         countrySearch.setAttribute('data-click', 'false');
         countryDropdown.setAttribute('class','dropdown');
     });
     countryTwo.addEventListener('click', function(event){
+        // Get Song in Country
         getSongCountry(JSON.parse(localStorage.getItem('country-code2')),2);
+        // Stop Propagation
         event.stopPropagation();
+        // Dropdown Menu Settings
         countrySearch.setAttribute('data-click', 'false');
         countryDropdown.setAttribute('class','dropdown');
     });
     countryThree.addEventListener('click', function(event){
+        // Get Song in Country
         getSongCountry(JSON.parse(localStorage.getItem('country-code1')),1);
+        // Stop Propagation
         event.stopPropagation();
+        // Dropdown Menu Settings
         countrySearch.setAttribute('data-click', 'false');
         countryDropdown.setAttribute('class','dropdown');
     });

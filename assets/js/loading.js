@@ -9,5 +9,8 @@ function fetchOptions() {
     getRandomCountry(2);
     getRandomCountry(3);
 }
-
 fetchOptions();
+let loadingPage = setTimeout( function (){
+    window.location.replace('./main.html');
+    clearTimeout(loadingPage);
+}, 7000)

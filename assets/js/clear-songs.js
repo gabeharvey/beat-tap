@@ -13,4 +13,7 @@ function clearSongs(){
     localStorage.removeItem('song-artist-name-artist1');
     localStorage.removeItem('song-artist-name-artist2');
     localStorage.removeItem('song-artist-name-artist3');
+
+    songName.textContent='';
+    songArtist.textContent='';
 }

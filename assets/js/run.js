@@ -53,34 +53,61 @@ function run(){
 
     // Song by Artist Option Display Event Listeners
     artistOne.addEventListener('click', function(event){
-        // Clear Current Song from Storage
+        // Clear Current Song from Storage and Display
         clearSongs();
         // Get Song by Artist
         getSongArtist(JSON.parse(localStorage.getItem('artist1')),1);
         // Stop Propagation
         event.stopPropagation();
+        // Loading
+        songName.textContent = 'LOADING...';
+        // Timeout
+        let timeout = setTimeout(function(){
+            // Song Display
+            songName.textContent = JSON.parse(localStorage.getItem('song-artist1'));
+            songArtist.textContent = JSON.parse(localStorage.getItem('song-artist-name-artist1'));
+            clearTimeout(timeout);
+        },5000);
         // Dropdown Menu Settings
         artistSearch.setAttribute('data-click', 'false');
         artistDropdown.setAttribute('class','dropdown');
     });
     artistTwo.addEventListener('click', function(event){
-        // Clear Current Song from Storage
+        // Clear Current Song from Storage and Display
         clearSongs();
         // Get Song by Artist
         getSongArtist(JSON.parse(localStorage.getItem('artist2')),2);
         // Stop Propagation
         event.stopPropagation();
+        // Loading
+        songName.textContent = 'LOADING...';
+        // Timeout
+        let timeout = setTimeout(function(){
+            // Song Display
+            songName.textContent = JSON.parse(localStorage.getItem('song-artist2'));
+            songArtist.textContent = JSON.parse(localStorage.getItem('song-artist-name-artist2'));
+            clearTimeout(timeout);
+        },5000);
         // Dropdown Menu Settings
         artistSearch.setAttribute('data-click', 'false');
         artistDropdown.setAttribute('class','dropdown');
     });
     artistThree.addEventListener('click', function(event){
-        // Clear Current Song from Storage
+        // Clear Current Song from Storage and Display
         clearSongs();
         // Get Song by Artist
         getSongArtist(JSON.parse(localStorage.getItem('artist3')),3);
         // Stop Propagation
         event.stopPropagation();
+        // Loading
+        songName.textContent = 'LOADING...';
+        // Timeout
+        let timeout = setTimeout(function(){
+            // Song Display
+            songName.textContent = JSON.parse(localStorage.getItem('song-artist3'));
+            songArtist.textContent = JSON.parse(localStorage.getItem('song-artist-name-artist3'));
+            clearTimeout(timeout);
+        },5000);
         // Dropdown Menu Settings
         artistSearch.setAttribute('data-click', 'false');
         artistDropdown.setAttribute('class','dropdown');
@@ -93,36 +120,71 @@ function run(){
     
     // Song by Country Option Display Event Listners
     countryOne.addEventListener('click', function(event){
-        // Clear Current Song from Storage
+        // Clear Current Song from Storage and Display
         clearSongs();
         // Get Song in Country
         getSongCountry(JSON.parse(localStorage.getItem('country-code1')),1);
         // Stop Propagation
         event.stopPropagation();
+        // Loading
+        songName.textContent = 'LOADING...';
+        // Timeout
+        let timeout = setTimeout(function(){
+            // Song Display
+            songName.textContent = JSON.parse(localStorage.getItem('song-country1'));
+            songArtist.textContent = JSON.parse(localStorage.getItem('song-artist-name-country1'));
+            clearTimeout(timeout);
+        },5000);
+        // Song Display
+        songName.textContent = JSON.parse(localStorage.getItem('song-country1'));
+        songArtist.textContent = JSON.parse(localStorage.getItem('song-artist-name-country1'));
         // Dropdown Menu Settings
         countrySearch.setAttribute('data-click', 'false');
         countryDropdown.setAttribute('class','dropdown');
     });
     countryTwo.addEventListener('click', function(event){
-        // Clear Current Song from Storage
+        // Clear Current Song from Storage and Display
         clearSongs();
         // Get Song in Country
         getSongCountry(JSON.parse(localStorage.getItem('country-code2')),2);
         // Stop Propagation
         event.stopPropagation();
+        // Loading
+        songName.textContent = 'LOADING...';
+        // Timeout
+        let timeout = setTimeout(function(){
+            // Song Display
+            songName.textContent = JSON.parse(localStorage.getItem('song-country2'));
+            songArtist.textContent = JSON.parse(localStorage.getItem('song-artist-name-country2'));
+            clearTimeout(timeout);
+        },5000);
         // Dropdown Menu Settings
         countrySearch.setAttribute('data-click', 'false');
         countryDropdown.setAttribute('class','dropdown');
     });
     countryThree.addEventListener('click', function(event){
-        // Clear Current Song from Storage
+        // Clear Current Song from Storage and Display
         clearSongs();
         // Get Song in Country
         getSongCountry(JSON.parse(localStorage.getItem('country-code3')),3);
         // Stop Propagation
         event.stopPropagation();
+        // Loading
+        songName.textContent = 'LOADING...';
+        // Timeout
+        let timeout = setTimeout(function(){
+            // Song Display
+            songName.textContent = JSON.parse(localStorage.getItem('song-country3'));
+            songArtist.textContent = JSON.parse(localStorage.getItem('song-artist-name-country3'));
+            clearTimeout(timeout);
+        },5000);
+        // Song Display
+        songName.textContent = JSON.parse(localStorage.getItem('song-country3'));
+        songArtist.textContent = JSON.parse(localStorage.getItem('song-artist-name-country3'));
         // Dropdown Menu Settings
         countrySearch.setAttribute('data-click', 'false');
         countryDropdown.setAttribute('class','dropdown');
     });
 }
+
+run();

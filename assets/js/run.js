@@ -1,4 +1,6 @@
 // Variable Declaration
+const searchQuery = document.getElementById('searchQuery');
+const mainSearch = document.getElementById('mainSearch');
 const artistSearch = document.getElementById('artistSearch');
 const countrySearch = document.getElementById('countrySearch');
 
@@ -178,12 +180,26 @@ function run(){
             songArtist.textContent = JSON.parse(localStorage.getItem('song-artist-name-country3'));
             clearTimeout(timeout);
         },5000);
-        // Song Display
-        songName.textContent = JSON.parse(localStorage.getItem('song-country3'));
-        songArtist.textContent = JSON.parse(localStorage.getItem('song-artist-name-country3'));
         // Dropdown Menu Settings
         countrySearch.setAttribute('data-click', 'false');
         countryDropdown.setAttribute('class','dropdown');
+    });
+
+    mainSearch.addEventListener('click',function(event){
+        event.preventDefault();
+        if(searchQuery.value){
+            clearSongs();
+            generalSearch(searchQuery.value);
+             // Loading
+            songName.textContent = 'LOADING...';
+            // Timeout
+            let timeout = setTimeout(function(){
+                // Song Display
+                songName.textContent = JSON.parse(localStorage.getItem('song'));
+                songArtist.textContent = JSON.parse(localStorage.getItem('song-artist'));
+                clearTimeout(timeout);
+            },5000);
+        } 
     });
 }
 

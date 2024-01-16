@@ -124,7 +124,7 @@ function getSongCountry(code,countryNumber){
     })
     .then(function(data){
         if (data.resultCount===0){
-            localStorage.setItem('song-country'+countryNumber,JSON.stringify(''));
+            localStorage.setItem('song-country'+countryNumber,JSON.stringify('No Songs to Display'));
             localStorage.setItem('song-artist-name-country'+countryNumber,JSON.stringify(''));
         } else {
             let random=randomNumber(data.resultCount-1);
@@ -150,7 +150,7 @@ function getSongArtist(artist,artistNumber){
    })
    .then(function(data){
     if (data.resultCount===0){
-        localStorage.setItem('song-artist'+artistNumber,JSON.stringify(''));
+        localStorage.setItem('song-artist'+artistNumber,JSON.stringify('No Songs to Display'));
         localStorage.setItem('song-artist-name-artist'+artistNumber,JSON.stringify(''));
     } else {
         let random=randomNumber(data.resultCount-1);
@@ -174,8 +174,13 @@ function generalSearch(query){
         }
     })
     .then(function(data){
-        let random=randomNumber(data.resultCount-1);
-        localStorage.setItem('song',JSON.stringify(data.results[random].trackName));
-        localStorage.setItem('song-artist',JSON.stringify(data.results[random].artistName));
+        if (data.resultCount===0){
+            localStorage.setItem('song',JSON.stringify('No Songs to Display'));
+            localStorage.setItem('song-artist',JSON.stringify(''));
+        } else {
+            let random=randomNumber(data.resultCount-1);
+            localStorage.setItem('song',JSON.stringify(data.results[random].trackName));
+            localStorage.setItem('song-artist',JSON.stringify(data.results[random].artistName));
+        }
     });
 }

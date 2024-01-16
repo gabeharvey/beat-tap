@@ -161,3 +161,21 @@ function getSongArtist(artist,artistNumber){
 
 }
 
+// General Search Through iTunes Library
+function generalSearch(query){
+    let requestURL='https://itunes.apple.com/search?term='+query+'&entity=song';
+    fetch(requestURL)
+    .then(function(response){
+        if (response.status!==200){
+            localStorage.clear();
+            window.location.replace('./index.html');
+        } else {
+            return response.json();
+        }
+    })
+    .then(function(data){
+        let random=randomNumber(data.resultCount-1);
+        localStorage.setItem('song',JSON.stringify(data.results[random].trackName));
+        localStorage.setItem('song-artist',JSON.stringify(data.results[random].artistName));
+    });
+}

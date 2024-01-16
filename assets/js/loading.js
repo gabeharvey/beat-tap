@@ -1,3 +1,4 @@
+// Fetch Data
 function fetchOptions() {
     // Set Random Artists
     getRandomArtistSolo(1);
@@ -10,7 +11,9 @@ function fetchOptions() {
     getRandomCountry(3);
 }
 fetchOptions();
+
+// Timeout for Loading Page
 let loadingPage = setTimeout( function (){
     window.location.replace('./main.html');
     clearTimeout(loadingPage);
-}, 7000)
+}, 10000);

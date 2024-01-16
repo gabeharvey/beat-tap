@@ -1,5 +1,6 @@
 function clearSongs(){
     // Remove Songs from Local Storage
+    localStorage.removeItem('song');
     localStorage.removeItem('song-country1');
     localStorage.removeItem('song-country2');
     localStorage.removeItem('song-country3');
@@ -7,6 +8,7 @@ function clearSongs(){
     localStorage.removeItem('song-artist2');
     localStorage.removeItem('song-artist3');
     // Remove Song Artist from Local Storage
+    localStorage.removeItem('song-artist');
     localStorage.removeItem('song-artist-name-country1');
     localStorage.removeItem('song-artist-name-country2');
     localStorage.removeItem('song-artist-name-country3');

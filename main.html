@@ -8,23 +8,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 <body background="./assets/images/metal-display-screen.jpg">
-
   <header>
     <!-- Title and anchor tags for login and sign up features -->
     <h1 class="is-size-1 is-uppercase has-text-weight-bold">Beat Tap</h1>
     <nav class="has-text-right">
-
-
-        <a class="has-text-warning">Login</a>
-        <a class="has-text-warning">Sign up</a>
-
+      <p class="has-text-warning">Discover the World Through Music</p>
     </nav>
-
   </header>
-
   <!-- dropdown container -->
   <div id="dropdownContainer">
-
     <!-- artist dropdown menu -->
     <div class="dropdown" id="artist-dropdown">
       <div class="dropdown-trigger">
@@ -43,7 +35,6 @@
       </div>
       </div>
     </div>
-
     <!-- country dropdown menu -->
     <div class="dropdown" id="country-dropdown">
       <div class="dropdown-trigger">
@@ -62,31 +53,23 @@
         </div>
       </div>
     </div>
-  
   </div>
-
-
   <main>
-
     <!-- added search bar -->
     <form class="mt-4" id="search-bar">
         <input name= 'Search'  placeholder="Search by Artist, Country, or Song ie Doja Cat, South Korea, or Paint the Town Red" id="searchQuery"/>
         <button id= "mainSearch" class = "is-active">Search</button>
     </form>
-
     <!-- song display container -->
     <div id="song-container">
       <h2 id="song-name"></h2>
       <p id="song-artist"></h3>
     </div>
-
   </main>
-
   <footer>
     <p class="has-text-centered has-text-weight-bold has-text-warning">Brought to you by The Double Clicks</p>
     <p class="has-text-centered has-text-weight-bold has-text-warning">Copyright &copy 2024</p>
   </footer>
-
   <script src="./assets/js/api.js"></script>
   <script src="./assets/js/clear-songs.js"></script>
   <script src="./assets/js/run.js"></script>

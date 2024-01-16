@@ -1,8 +1,10 @@
+/* overall appearance of website */
 :root {
     background-color: black;
     color: white;
 }
 
+/* introduction loading page title appearance */
 #loading {
     height: 60vh;
     width: 100vw;
@@ -12,10 +14,12 @@
     color: yellow;
 }
 
+/* hover function for loading page title text */
 #loading:hover {
     color: red;
 }
 
+/* loading page text appearance */
 #loadingPara {
     display: flex;
     justify-content: center;
@@ -28,6 +32,7 @@
     text-shadow: 0px 3px 3px red;
 }
 
+/* main page header appearance */
 header {
     color: yellow;
     border: 5px solid white;
@@ -39,27 +44,35 @@ header {
     opacity: .9;
 }
 
+/* navbar position and appearance */
 nav {
     position: bottom;
     text-shadow: 0px 0px 0px;
     font-weight: bolder;
 }
 
+/* user input box styling */
 input {
     border-radius: 5px 5px 5px 5px;
     border: none;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bolder;
+    background-color: white;
+    color: darkslategray;
     width: 82vw;
-    height: 30px;
+    height: 4vh;
     opacity: .9;
 }
 
+/* user input search box positioning */
 #search-bar{
     display:flex;
     flex-direction:row;
     justify-content: center;
 }
 
+/* user input search button appearance */
 #mainSearch {
     border-radius: 5px 5px 5px 5px;
     width: 100px;
@@ -73,10 +86,12 @@ input {
     opacity: .9;
 }
 
+/* user input search button hover function */
 #mainSearch:hover {
     cursor: pointer;
 }
 
+/* user input search button active function appearance */
 #mainSearch:active {
     background-color: white;
     color: red;
@@ -91,20 +106,7 @@ input {
     justify-content: space-around;
 }
 
-#artist {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    border: 5px solid white;
-    border-radius: 10px 10px 10px 10px;
-    width: 45vw;
-    height: 300px;
-    box-shadow: 5px 5px 5px white;
-    background-image: linear-gradient(to bottom, black, darkgray);
-    opacity: .9;
-}
-
+/* artist search button appearance */
 #artistSearch {
     margin: 10px;
     border-radius: 5px 5px 5px 5px;
@@ -119,10 +121,12 @@ input {
     box-shadow: 5px 5px 5px white;
 }
 
+/* artist search button hover appearance */
 #artistSearch:hover {
     cursor: pointer;
 }
 
+/* artist search button active appearance */
 #artistSearch:active {
     background-color: white;
     color: red;
@@ -131,6 +135,7 @@ input {
     transform: translateY(4px);
 }
 
+/* artist list search results appearance */
 .artistList {
     color: red;
     font-size: 30px;
@@ -139,20 +144,7 @@ input {
     text-shadow: 0px 2px 2px white;
 }
 
-#country {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    border: 5px solid white;
-    border-radius: 10px 10px 10px 10px;
-    width: 45vw;
-    height: 300px;
-    box-shadow: 5px 5px 5px white;
-    background-image: linear-gradient(to bottom, black, darkgray);
-    opacity: .9;
-}
-
+/* country search button appearance */
 #countrySearch {
     margin: 10px;
     border-radius: 5px 5px 5px 5px;
@@ -167,10 +159,12 @@ input {
     box-shadow: 5px 5px 5px white;
 }
 
+/* country search button hover appearance */
 #countrySearch:hover {
     cursor: pointer;
 }
 
+/* country search button active appearance */
 #countrySearch:active {
     background-color: white;
     color: red;
@@ -179,6 +173,7 @@ input {
     transform: translateY(4px);
 }
 
+/* country search results appearance */
 .countryList {
     color: red;
     font-size: 30px;
@@ -187,6 +182,7 @@ input {
     text-shadow: 0px 2px 2px white;
 }
 
+/* song results display, positioning and appearance */
 #song-container {
     display: flex;
     flex-direction: column;
@@ -206,6 +202,7 @@ input {
     opacity: .9;
 }
 
+/* footer positioning and appearance */
 footer {
     display: flex;
     flex-direction: row;

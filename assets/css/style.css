@@ -9,6 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     height: 60vh;
     width: 100vw;
     font-size: 100px;
@@ -22,11 +23,28 @@
     color: red;
 }
 
+/* loading script appearance on loading page */
+.loadingScript {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: red;
+    font-family: 'Sedgwick Ave';
+    text-shadow: none;
+    width: 100vw;
+    margin-bottom: 200px;
+    padding: 30px;
+    font-size: 60px;
+    text-shadow: 0px 3px 3px white;
+}
+
 /* loading page text appearance */
 #loadingPara {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     color: red;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-shadow: none;
@@ -56,6 +74,27 @@ nav {
     text-shadow: 0px 0px 0px;
     font-weight: bolder;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* user instructions box */
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 17vh;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0px 2px 2px gray;
+    border: 5px solid white;
+    font-size: 16px;
+    border-radius: 10px 10px 10px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 5px 5px 5px white;
+    background-image: linear-gradient(to bottom, black, darkgray);
+    opacity: .9;
 }
 
 /* user input box styling */

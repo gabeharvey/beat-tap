@@ -24,11 +24,11 @@ iTunes Search API: https://developer.apple.com/library/archive/documentation/Aud
 
 ## Screenshots
 
-![Alt text](./assets/images/loading-page-screen.jpg)
+![Alt text](./assets/images/new-loading-screen.jpg)
 
-![Alt text](./assets/images/main-page-screen.jpg)
+![Alt text](./assets/images/new-main-screen.jpg)
 
-![Alt text](./assets/images/main-page-results-screen.jpg)
+![Alt text](./assets/images/new-results-screen.jpg)
 
 ## Link to Website
 

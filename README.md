@@ -1,4 +1,4 @@
-# Beat-Tap
+# Beat Tap
 
 ## Description
 
@@ -24,11 +24,11 @@ iTunes Search API: https://developer.apple.com/library/archive/documentation/Aud
 
 ## Screenshots
 
-![Alt text](./assets/images/new-loading-screen.jpg)
+![Alt text](./assets/images/final-loading-screen.jpg)
 
-![Alt text](./assets/images/new-main-screen.jpg)
+![Alt text](./assets/images/final-main-screen.jpg)
 
-![Alt text](./assets/images/new-results-screen.jpg)
+![Alt text](./assets/images/final-results-screen.jpg)
 
 ## Link to Website
 
@@ -36,4 +36,4 @@ https://gabeharvey.github.io/beat-tap/
 
 ## License
 
-Please refer to LICENSE in Beat-Tap Repository
+Please refer to LICENSE in Beat Tap Repository.

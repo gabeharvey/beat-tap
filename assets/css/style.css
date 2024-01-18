@@ -55,6 +55,11 @@
     text-shadow: 0px 3px 3px white;
 }
 
+/* loading screen button cursor */
+#home:hover {
+    cursor:pointer;
+}
+
 /* main page header appearance */
 header {
     color: yellow;

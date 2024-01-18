@@ -1,4 +1,6 @@
 // Variable Declaration
+const homeBtn = document.getElementById('home');
+
 const searchQuery = document.getElementById('searchQuery');
 const mainSearch = document.getElementById('mainSearch');
 const artistSearch = document.getElementById('artistSearch');
@@ -20,6 +22,13 @@ const songArtist =document.getElementById('song-artist');
 
 
 function run(){
+
+    // Run Loading Page Event Listener
+    homeBtn.addEventListener('click', function(event){
+        event.stopPropagation();
+        localStorage.clear();
+        window.location.replace('./index.html');
+    });
 
     // Display Options in Dropdown Menus
     artistOne.textContent = JSON.parse(localStorage.getItem('artist1'));
